@@ -1,0 +1,6 @@
+<%= link_to "Create new event", new_post_path, class: 'btn btn-info' %>
+
+<hr>
+
+
+<%= simple_table_for @posts, with: PostsTable %>
