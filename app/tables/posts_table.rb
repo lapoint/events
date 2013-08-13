@@ -6,6 +6,11 @@ class PostsTable < TableCloth::Base
   column :body
   column :datetime
 
+    actions seperator: " | " do
+    action {|post| link_to "Edit", edit_post_path(post) }
+    action {|post| link_to "Delete", post_path(post), method: :delete }
+  end
+
   # Define columns with the #column method
   # column :name, :email
 
@@ -37,4 +42,5 @@ class PostsTable < TableCloth::Base
   # end
   #
   # If action provides an "if:" option, it will call that method on the object. It can also take a block with an arity of 1.
+config.table.class = 'table table-bordered'
 end
