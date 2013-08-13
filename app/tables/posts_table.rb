@@ -4,7 +4,7 @@ class PostsTable < TableCloth::Base
 
   column :title
   column :body
-  column :datetime
+  column :datetime, label: 'Date/Time'
 
     actions seperator: " | " do
     action {|post| link_to "Edit", edit_post_path(post) }
