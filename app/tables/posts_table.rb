@@ -2,9 +2,10 @@ class PostsTable < TableCloth::Base
   # To include actions on this table, uncomment this line
   include TableCloth::Extensions::Actions
 
-  column :title
-  column :body
   column :datetime, label: 'Date/Time'
+  column :title, label: 'Event Name'
+  column :body, label: 'Details'
+  
 
     actions seperator: " | " do
     action {|post| link_to "Edit", edit_post_path(post) }
@@ -42,5 +43,5 @@ class PostsTable < TableCloth::Base
   # end
   #
   # If action provides an "if:" option, it will call that method on the object. It can also take a block with an arity of 1.
-config.table.class = 'table table-bordered'
+config.table.class = 'table table-hover'
 end
