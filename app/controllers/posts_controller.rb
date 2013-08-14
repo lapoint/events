@@ -35,6 +35,7 @@ class PostsController < ApplicationController
 			redirect_to posts_path
 		else
 			render :edit
+		end
 	end
 	
 	def destroy
@@ -44,13 +45,12 @@ class PostsController < ApplicationController
 
 		redirect_to posts_path
 	end
-end
 
 #for strong params
 private
 
 	def post_params
-		params.require(:post).permit(:title, :body, :image)
+		params.require(:post).permit(:title, :body, :datetime)
 	end
 
 end
